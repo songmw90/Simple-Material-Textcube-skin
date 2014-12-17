@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>[##_title_##]
+			<s_page_title>
+				:: [##_page_post_title_##]
+			</s_page_title></title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+		<link href="//cdn.jsdelivr.net/bootstrap.material-design/0.2.1/css/material-wfont.min.css" rel="stylesheet">
+		<link href="//cdn.jsdelivr.net/bootstrap.material-design/0.2.1/css/material-wfont.css.map" rel="stylesheet">
+
+		<meta http-equiv="Keywords" content="[##_meta_http_equiv_keywords_##]" />
+		<link rel="shortcut icon" href="[##_blog_link_##]favicon.ico" />
+
+		<link rel="alternate" type="application/rss+xml" title="[##_title_##]" href="[##_rss_url_##]" />
+		<link rel="alternate" type="application/rss+xml" title="[##_title_##] : responses" href="[##_response_rss_url_##]" />
+		<link rel="alternate" type="application/atom+xml" title="[##_title_##]" href="[##_atom_url_##]" />
+		<link rel="alternate" type="application/atom+xml" title="[##_title_##] : responses" href="[##_response_atom_url_##]" />
+
+		<!-- Page style -->
+		<style>
+			@import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css');
+
+			* {
+				box-sizing: border-box;
+				font-family: 'Nanum Gothic' !important;
+			}
+			body, html {
+				background: none repeat scroll 0 0 #fff;
+				margin: 0;
+				text-rendering: optimizelegibility
+			}
+			/* FIXME: why do I need these overrides? */
+			.navbar input::-webkit-input-placeholder {
+				color: rgba(255,255,255,.84) !important
+			}
+			.navbar input::-moz-placeholder {
+				color: rgba(255,255,255,.84) !important
+			}
+			.navbar input:-ms-input-placeholder {
+				color: rgba(255,255,255,.84) !important
+			}
+
+			.header-panel {
+				background-color: #003782;
+				height: 60px;
+				position: relative;
+				z-index: 3;
+			}
+			.header-panel div {
+				position: relative;
+				height: 100%;
+			}
+			.header-panel h1 {
+				color: #FFF;
+				font-size: 25px;
+				font-weight: bold;
+				position: absolute;
+				bottom: 10px;
+			}
+
+			.container {
+				font-size: 22px;
+			}
+			a {
+				color: #003782;
+				border-bottom: 1px dotted #960d20;
+			}
+			a:hover, a:focus {
+				color: #960d20;
+				text-decoration: none;
+			}
+			.titleWrap h2 {
+				font-size: 40px;
+			}
+			.titleWrap h2 a {
+				font-size: 40px;
+				font-weight: bold;
+				border-bottom: none;
+			}
+			.titleWrap span,.tagTrail {
+				font-size: 13px;
+			}
+			.actionTrail {
+				text-align: right;
+			}
+			.paging {
+				text-align: center;
+			}
+			.search {
+				position: absolute;
+				right: 10px;
+				top: 15px;
+				z-index: 4;
+			}
+			.btn-primary:not(.btn-link):not(.btn-flat) {
+				background-color:#003782;
+			}
+		</style>
+
+		<!-- jQuery -->
+		<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+
+	</head>
+
+	<body id="[##_body_id_##]">
+
+
+		<div class="header-panel shadow-z-2">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-3">
+						<a href="/"><h1>[##_title_##]</h1></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+								
+		<div class="container">
+			<s_list>
+				<div class="searchList">
+					<h3>Result for [##_list_conform_##]:</h3>
+					<s_keylo>
+					</s_keylo>
+						<s_list_rep>
+							<li>
+								<span class="date">[##_list_rep_regdate_##]</span>
+								<a href="[##_list_rep_link_##]">[##_list_rep_title_##]</a>
+								<span class="cnt">[##_list_rep_rp_cnt_##]</span>
+							</li>
+						</s_list_rep>
+				</div>
+				<hr>
+			</s_list>
+
+
+		<!-- 검색 모듈 -->
+			<div class="search">
+				<s_search>
+					<input type="text" name="[##_search_name_##]" value="[##_search_text_##]"/>
+					<input value="검색" type="submit" class="submit"/>
+				</s_search>
+			</div>
+
+					
+			<s_article_rep>
+				<div class="entry [##_article_rep_category_body_id_##]">
+					<div class="titleWrap">
+						<h2><a href="[##_article_rep_link_##]">[##_article_rep_title_##]</a></h2>
+						<span class="category"><a href="[##_article_rep_category_link_##]">[##_article_rep_category_##]</a> </span>
+						<span class="date">[##_article_rep_date_##]</span>
+					<s_tag_label>
+						<div class="tagTrail">
+							<span class="tagText"></span> [##_tag_label_rep_##]
+						</div>
+					</s_tag_label>
+						<hr>
+						<s_ad_div>
+							<div class="admin">
+								<a href="[##_s_ad_m_link_##]">수정</a> : <a href="#" onclick="[##_s_ad_m_onclick_##]">수정(창으로)</a> |
+								([##_s_ad_s1_label_##])→<a href="#" onclick="[##_s_ad_s2_onclick_##]">[##_s_ad_s2_label_##]</a> | <a href="#" onclick="[##_s_ad_t_onclick_##]">관련글(트랙백)</a> | <a href="#" onclick="[##_s_ad_d_onclick_##]">삭제</a>
+							</div>
+						</s_ad_div>
+					</div><!-- titleWrap close -->
+					
+					<div class="article">
+						[##_article_rep_desc_##]
+					</div>
+
+					<div class="actionTrail">
+						<a id="[##_article_rep_rp_cnt_id_##]" href="#rp" onclick="[##_article_rep_rp_link_##]">
+						<s_rp_count>
+							<span class="cnt">[##_article_rep_rp_cnt_##]</span> Comments
+						</s_rp_count></a>
+					</div>
+
+					<s_rp>
+						<div class="comment">
+							<div class="commentList">
+								<s_rp_container>
+									<ol>
+										<s_rp_rep>
+											<li id="[##_rp_rep_id_##]">
+												<div class="[##_rp_rep_class_##]">
+													<span class="name">[##_rp_rep_name_##]</span>
+													<span class="date"> [##_rp_rep_date_##]</span>
+													<span class="control"> <a href="[##_rp_rep_link_##]" class="address">&nbsp;<span>댓글주소</span></a> <a href="#" onclick="[##_rp_rep_onclick_delete_##]" class="modify">&nbsp;<span>수정/삭제</span></a> <a href="#" onclick="[##_rp_rep_onclick_reply_##]" class="write">&nbsp;<span>댓글쓰기</span></a> </span>
+													<p>
+														[##_rp_rep_desc_##]
+													</p>
+												</div>
+												<s_rp2_container>
+													<ul>
+														<s_rp2_rep>
+															<li id="[##_rp_rep_id_##]">
+																<div class="[##_rp_rep_class_##]">
+																	<span class="name">[##_rp_rep_name_##]</span>
+																	<span class="date"> [##_rp_rep_date_##]</span>
+																	<span class="control"> <a href="[##_rp_rep_link_##]" class="address">&nbsp;<span>댓글주소</span></a> <a href="#" onclick="[##_rp_rep_onclick_delete_##]" class="modify">&nbsp;<span>수정/삭제</span></a> </span>
+																	<p>
+																		[##_rp_rep_desc_##]
+																	</p>
+																</div>
+															</li>
+														</s_rp2_rep>
+													</ul>
+												</s_rp2_container>
+											</li>
+										</s_rp_rep>
+									</ol>
+								</s_rp_container>
+							</div><!-- commentList close -->
+
+							<s_rp_input_form>
+								<div class="commentWrite">
+									<s_rp_member>
+										<s_rp_guest>
+											<p>
+												<label for="[##_rp_input_name_##]_[##_article_rep_id_##]"> Name </label>
+												<input type="text" class="form-control empty" id="[##_rp_input_name_##]_[##_article_rep_id_##]" name="[##_rp_input_name_##]" value="[##_guest_name_##]" />
+											</p>
+											<p>
+												<label for="[##_rp_input_password_##]_[##_article_rep_id_##]"> Password </label>
+												<input type="password" class="form-control empty" id="[##_rp_input_password_##]_[##_article_rep_id_##]" name="[##_rp_input_password_##]" value="" />
+											</p>
+												<input type="hidden" id="[##_rp_input_homepage_##]_[##_article_rep_id_##]" name="[##_rp_input_homepage_##]" value=""/>
+										</s_rp_guest>
+									</s_rp_member>
+									<p>
+										<label> Comments </label>
+										<textarea name="[##_rp_input_comment_##]" class="form-control empty" rows="10" cols="50"></textarea>
+									</p>
+									<p>
+										<input type="submit" class="btn btn-primary btn-raised" value="댓글 달기" onclick="[##_rp_onclick_submit_##]" />
+									</p>
+								</div><!-- commentWrite close -->
+							</s_rp_input_form>
+
+						</div><!-- comment close -->
+					</s_rp>
+				</div><!-- entry close -->
+			</s_article_rep>
+
+			<s_paging>
+				<hr>
+				<div class="paging">
+					<a [##_prev_page_##] class="[##_no_more_prev_##]">Prev : </a>
+					<span class="numbox">
+						<s_paging_rep>
+						<a [##_paging_rep_link_##] class="num"> [##_paging_rep_link_num_##]</a>
+						</s_paging_rep>
+					</span>
+					<a [##_next_page_##] class="[##_no_more_next_##]"> : Next</a>
+				</div>
+			</s_paging>
+		</div>
+
+	</body>
+</html>
