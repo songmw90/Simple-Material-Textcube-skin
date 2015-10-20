@@ -89,6 +89,7 @@
 			}
 			.paging {
 				text-align: center;
+				margin-bottom:20px;
 			}
 			.search {
 				position: absolute;
@@ -98,6 +99,13 @@
 			}
 			.btn-primary:not(.btn-link):not(.btn-flat) {
 				background-color:#003782;
+			}
+			.selected {
+				color: red;
+			}
+			.num {
+				margin-right:10px;
+				border-bottom: none;
 			}
 		</style>
 
@@ -120,7 +128,7 @@
 		</div>
 
 
-								
+
 		<div class="container">
 			<s_list>
 				<div class="searchList">
@@ -146,7 +154,7 @@
 				</s_search>
 			</div>
 
-					
+
 			<s_article_rep>
 				<div class="entry [##_article_rep_category_body_id_##]">
 					<div class="titleWrap">
@@ -166,7 +174,7 @@
 							</div>
 						</s_ad_div>
 					</div><!-- titleWrap close -->
-					
+
 					<div class="article">
 						[##_article_rep_desc_##]
 					</div>
@@ -235,7 +243,7 @@
 										<textarea name="[##_rp_input_comment_##]" class="form-control empty" rows="10" cols="50"></textarea>
 									</p>
 									<p>
-										<input type="submit" class="btn btn-primary btn-raised" value="댓글 달기" onclick="[##_rp_onclick_submit_##]" />
+										<input type="submit" class="btn btn-primary btn-raised" value="Submit" onclick="[##_rp_onclick_submit_##]" />
 									</p>
 								</div><!-- commentWrite close -->
 							</s_rp_input_form>
@@ -248,13 +256,13 @@
 			<s_paging>
 				<hr>
 				<div class="paging">
-					<a [##_prev_page_##] class="[##_no_more_prev_##]">Prev : </a>
+
 					<span class="numbox">
 						<s_paging_rep>
 						<a [##_paging_rep_link_##] class="num"> [##_paging_rep_link_num_##]</a>
 						</s_paging_rep>
 					</span>
-					<a [##_next_page_##] class="[##_no_more_next_##]"> : Next</a>
+
 				</div>
 			</s_paging>
 		</div>
