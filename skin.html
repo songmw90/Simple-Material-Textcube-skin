@@ -14,12 +14,6 @@
 
 		<meta http-equiv="Keywords" content="[##_meta_http_equiv_keywords_##]" />
 		<link rel="shortcut icon" href="[##_blog_link_##]favicon.ico" />
-
-		<link rel="alternate" type="application/rss+xml" title="[##_title_##]" href="[##_rss_url_##]" />
-		<link rel="alternate" type="application/rss+xml" title="[##_title_##] : responses" href="[##_response_rss_url_##]" />
-		<link rel="alternate" type="application/atom+xml" title="[##_title_##]" href="[##_atom_url_##]" />
-		<link rel="alternate" type="application/atom+xml" title="[##_title_##] : responses" href="[##_response_atom_url_##]" />
-
 		<!-- Page style -->
 		<style>
 			@import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css');
@@ -56,7 +50,7 @@
 			}
 			.header-panel h1 {
 				color: #FFF;
-				font-size: 25px;
+				font-size: 15px;
 				font-weight: bold;
 				position: absolute;
 				bottom: 10px;
@@ -65,7 +59,10 @@
 			.container {
 				font-size: 22px;
 			}
-			a {
+            .syntaxhighlighter, .code .container {
+                font-size: 17px;
+            }
+            a {
 				color: #003782;
 				border-bottom: 1px dotted #960d20;
 			}
@@ -89,6 +86,7 @@
 			}
 			.paging {
 				text-align: center;
+				margin-bottom:20px;
 			}
 			.search {
 				position: absolute;
@@ -99,28 +97,100 @@
 			.btn-primary:not(.btn-link):not(.btn-flat) {
 				background-color:#003782;
 			}
+			.selected {
+				color: red;
+			}
+			.num {
+				margin-right:10px;
+				border-bottom: none;
+			}
+
+            aside {
+                display: none;
+                background-color: #27262b;
+                padding: 10px;
+                border-width: 0 0 0 1px;
+                color: #e3e3e3;
+                height: 100%;
+                overflow: auto;
+                position: fixed;
+                left: 0px;
+                top: 0;
+                transition: all 0.4s ease 0s;
+                transform: translate3d(100%, 0px, 0px);
+                width: 250px;
+                z-index: 0;
+            }
+            aside.open {
+                display: block;
+                transform: translate3d(0px, 0px, 0px);
+            }
+            aside .sidebar-area ul {
+                list-style: outside none none;
+                margin: 0;
+                padding:0;
+            }
+            aside .sidebar-area li {
+                padding: 5px;
+            }
+            aside .sidebar-area li > a{
+                color:white;
+                font-size:18px;
+            }
+            #page {
+                height: 100%;
+                transition: margin-left 0.25s ease-in-out 0s;
+            }
+            #page.sidebar-open {
+               left: -250px;
+               overflow: hidden;
+               transform: translate3d(250px, 0px, 0px);
+            }
+            .comment ol {
+                list-style: none;
+            }
 		</style>
 
 		<!-- jQuery -->
 		<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+          ga('create', 'UA-48309111-1', 'auto');
+          ga('send', 'pageview');
+          $(document).ready(function(){
+             var sidebar = false;
+             $('#menu').on('click',function() { if (!sidebar) {$('aside').addClass('open'); $('#page').addClass('sidebar-open'); sidebar=true;} else {$('aside').removeClass('open'); $('#page').removeClass('sidebar-open'); sidebar = false;} });
+          });
+        </script>
 	</head>
 
 	<body id="[##_body_id_##]">
-
-
+        <aside>
+        <h3><a href='/' style="color:white; font-size:20px; font-weight:bold;">늘모자란</a></h3>
+        <div class="sidebar-area">
+        <s_sidebar>
+           <s_sidebar_element>
+               [##_category_list_##]
+           </s_sidebar_element>
+        </s_sidebar>
+        </div>
+        </aside>
+    <div id="page">
 		<div class="header-panel shadow-z-2">
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-xs-3">
-						<a href="/"><h1>[##_title_##]</h1></a>
+						<h1 id="menu" style="cursor:pointer">[##_title_##]<b class="caret"></b></h1>
 					</div>
 				</div>
 			</div>
 		</div>
 
 
-								
+
 		<div class="container">
 			<s_list>
 				<div class="searchList">
@@ -131,7 +201,6 @@
 							<li>
 								<span class="date">[##_list_rep_regdate_##]</span>
 								<a href="[##_list_rep_link_##]">[##_list_rep_title_##]</a>
-								<span class="cnt">[##_list_rep_rp_cnt_##]</span>
 							</li>
 						</s_list_rep>
 				</div>
@@ -146,7 +215,7 @@
 				</s_search>
 			</div>
 
-					
+
 			<s_article_rep>
 				<div class="entry [##_article_rep_category_body_id_##]">
 					<div class="titleWrap">
@@ -166,7 +235,7 @@
 							</div>
 						</s_ad_div>
 					</div><!-- titleWrap close -->
-					
+
 					<div class="article">
 						[##_article_rep_desc_##]
 					</div>
@@ -180,6 +249,7 @@
 
 					<s_rp>
 						<div class="comment">
+                        <hr>
 							<div class="commentList">
 								<s_rp_container>
 									<ol>
@@ -187,9 +257,9 @@
 											<li id="[##_rp_rep_id_##]">
 												<div class="[##_rp_rep_class_##]">
 													<span class="name">[##_rp_rep_name_##]</span>
-													<span class="date"> [##_rp_rep_date_##]</span>
-													<span class="control"> <a href="[##_rp_rep_link_##]" class="address">&nbsp;<span>댓글주소</span></a> <a href="#" onclick="[##_rp_rep_onclick_delete_##]" class="modify">&nbsp;<span>수정/삭제</span></a> <a href="#" onclick="[##_rp_rep_onclick_reply_##]" class="write">&nbsp;<span>댓글쓰기</span></a> </span>
-													<p>
+													<span class="date" style="font-size:13px"> [##_rp_rep_date_##]</span>
+													<span class="control" style="font-size:13px"> <a href="#" onclick="[##_rp_rep_onclick_delete_##]" class="modify">&nbsp;<span>수정/삭제</span></a> <a href="#" onclick="[##_rp_rep_onclick_reply_##]" class="write">&nbsp;<span>댓글쓰기</span></a> </span>
+													<p style="font-size:15px;margin-top:20px;">
 														[##_rp_rep_desc_##]
 													</p>
 												</div>
@@ -235,7 +305,7 @@
 										<textarea name="[##_rp_input_comment_##]" class="form-control empty" rows="10" cols="50"></textarea>
 									</p>
 									<p>
-										<input type="submit" class="btn btn-primary btn-raised" value="댓글 달기" onclick="[##_rp_onclick_submit_##]" />
+										<input type="submit" class="btn btn-primary btn-raised" value="Submit" onclick="[##_rp_onclick_submit_##]" />
 									</p>
 								</div><!-- commentWrite close -->
 							</s_rp_input_form>
@@ -248,16 +318,16 @@
 			<s_paging>
 				<hr>
 				<div class="paging">
-					<a [##_prev_page_##] class="[##_no_more_prev_##]">Prev : </a>
+
 					<span class="numbox">
 						<s_paging_rep>
 						<a [##_paging_rep_link_##] class="num"> [##_paging_rep_link_num_##]</a>
 						</s_paging_rep>
 					</span>
-					<a [##_next_page_##] class="[##_no_more_next_##]"> : Next</a>
+
 				</div>
 			</s_paging>
 		</div>
-
+    </div>
 	</body>
 </html>
