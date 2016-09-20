@@ -59,10 +59,10 @@
 			.container {
 				font-size: 22px;
 			}
-            .syntaxhighlighter, .code .container {
-                font-size: 17px;
-            }
-            a {
+      .syntaxhighlighter, .code .container {
+        font-size: 17px;
+      }
+      a {
 				color: #003782;
 				border-bottom: 1px dotted #960d20;
 			}
@@ -94,6 +94,9 @@
 				top: 15px;
 				z-index: 4;
 			}
+			.search input[type=text] {
+				width: 150px;
+			}
 			.btn-primary:not(.btn-link):not(.btn-flat) {
 				background-color:#003782;
 			}
@@ -104,51 +107,50 @@
 				margin-right:10px;
 				border-bottom: none;
 			}
-
-            aside {
-                display: none;
-                background-color: #27262b;
-                padding: 10px;
-                border-width: 0 0 0 1px;
-                color: #e3e3e3;
-                height: 100%;
-                overflow: auto;
-                position: fixed;
-                left: 0px;
-                top: 0;
-                transition: all 0.4s ease 0s;
-                transform: translate3d(100%, 0px, 0px);
-                width: 250px;
-                z-index: 0;
-            }
-            aside.open {
-                display: block;
-                transform: translate3d(0px, 0px, 0px);
-            }
-            aside .sidebar-area ul {
-                list-style: outside none none;
-                margin: 0;
-                padding:0;
-            }
-            aside .sidebar-area li {
-                padding: 5px;
-            }
-            aside .sidebar-area li > a{
-                color:white;
-                font-size:18px;
-            }
-            #page {
-                height: 100%;
-                transition: margin-left 0.25s ease-in-out 0s;
-            }
-            #page.sidebar-open {
-               left: -250px;
-               overflow: hidden;
-               transform: translate3d(250px, 0px, 0px);
-            }
-            .comment ol {
-                list-style: none;
-            }
+      aside {
+          display: none;
+          background-color: #27262b;
+          padding: 10px;
+          border-width: 0 0 0 1px;
+          color: #e3e3e3;
+          height: 100%;
+          overflow: auto;
+          position: fixed;
+          left: 0px;
+          top: 0;
+          transition: all 0.4s ease 0s;
+          transform: translate3d(100%, 0px, 0px);
+          width: 250px;
+          z-index: 0;
+      }
+      aside.open {
+          display: block;
+          transform: translate3d(0px, 0px, 0px);
+      }
+      aside .sidebar-area ul {
+          list-style: outside none none;
+          margin: 0;
+          padding:0;
+      }
+      aside .sidebar-area li {
+          padding: 5px;
+      }
+      aside .sidebar-area li > a{
+          color:white;
+          font-size:18px;
+      }
+      #page {
+          height: 100%;
+          transition: margin-left 0.25s ease-in-out 0s;
+      }
+      #page.sidebar-open {
+         left: -250px;
+         overflow: hidden;
+         transform: translate3d(250px, 0px, 0px);
+      }
+      .comment ol {
+          list-style: none;
+      }
 		</style>
 
 		<!-- jQuery -->
@@ -162,6 +164,7 @@
           ga('send', 'pageview');
           $(document).ready(function(){
              var sidebar = false;
+						 $('img').addClass('img-responsive');
              $('#menu').on('click',function() { if (!sidebar) {$('aside').addClass('open'); $('#page').addClass('sidebar-open'); sidebar=true;} else {$('aside').removeClass('open'); $('#page').removeClass('sidebar-open'); sidebar = false;} });
           });
         </script>
