@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-	<head>
+	<hed>
 		<meta charset="UTF-8">
 		<title>[##_title_##]
 			<s_page_title>
@@ -55,14 +55,16 @@
 				position: absolute;
 				bottom: 10px;
 			}
-
+            .article {
+                word-break: break-all;
+            }
 			.container {
 				font-size: 22px;
 			}
-      .syntaxhighlighter, .code .container {
-        font-size: 17px;
-      }
-      a {
+            .syntaxhighlighter, .code .container {
+                font-size: 17px;
+            }
+            a {
 				color: #003782;
 				border-bottom: 1px dotted #960d20;
 			}
@@ -94,9 +96,9 @@
 				top: 15px;
 				z-index: 4;
 			}
-			.search input[type=text] {
-				width: 150px;
-			}
+            .search input[type=text] {
+                width: 150px;
+            }
 			.btn-primary:not(.btn-link):not(.btn-flat) {
 				background-color:#003782;
 			}
@@ -107,50 +109,51 @@
 				margin-right:10px;
 				border-bottom: none;
 			}
-      aside {
-          display: none;
-          background-color: #27262b;
-          padding: 10px;
-          border-width: 0 0 0 1px;
-          color: #e3e3e3;
-          height: 100%;
-          overflow: auto;
-          position: fixed;
-          left: 0px;
-          top: 0;
-          transition: all 0.4s ease 0s;
-          transform: translate3d(100%, 0px, 0px);
-          width: 250px;
-          z-index: 0;
-      }
-      aside.open {
-          display: block;
-          transform: translate3d(0px, 0px, 0px);
-      }
-      aside .sidebar-area ul {
-          list-style: outside none none;
-          margin: 0;
-          padding:0;
-      }
-      aside .sidebar-area li {
-          padding: 5px;
-      }
-      aside .sidebar-area li > a{
-          color:white;
-          font-size:18px;
-      }
-      #page {
-          height: 100%;
-          transition: margin-left 0.25s ease-in-out 0s;
-      }
-      #page.sidebar-open {
-         left: -250px;
-         overflow: hidden;
-         transform: translate3d(250px, 0px, 0px);
-      }
-      .comment ol {
-          list-style: none;
-      }
+
+            aside {
+                display: none;
+                background-color: #27262b;
+                padding: 10px;
+                border-width: 0 0 0 1px;
+                color: #e3e3e3;
+                height: 100%;
+                overflow: auto;
+                position: fixed;
+                left: 0px;
+                top: 0;
+                transition: all 0.4s ease 0s;
+                transform: translate3d(100%, 0px, 0px);
+                width: 250px;
+                z-index: 0;
+            }
+            aside.open {
+                display: block;
+                transform: translate3d(0px, 0px, 0px);
+            }
+            aside .sidebar-area ul {
+                list-style: outside none none;
+                margin: 0;
+                padding:0;
+            }
+            aside .sidebar-area li {
+                padding: 5px;
+            }
+            aside .sidebar-area li > a{
+                color:white;
+                font-size:18px;
+            }
+            #page {
+                height: 100%;
+                transition: margin-left 0.25s ease-in-out 0s;
+            }
+            #page.sidebar-open {
+               left: -250px;
+               overflow: hidden;
+               transform: translate3d(250px, 0px, 0px);
+            }
+            .comment ol {
+                list-style: none;
+            }
 		</style>
 
 		<!-- jQuery -->
@@ -164,9 +167,48 @@
           ga('send', 'pageview');
           $(document).ready(function(){
              var sidebar = false;
-						 $('img').addClass('img-responsive');
+             $('img').addClass('img-responsive');
              $('#menu').on('click',function() { if (!sidebar) {$('aside').addClass('open'); $('#page').addClass('sidebar-open'); sidebar=true;} else {$('aside').removeClass('open'); $('#page').removeClass('sidebar-open'); sidebar = false;} });
           });
+        </script>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({
+             google_ad_client: "ca-pub-6562372416534335",
+             enable_page_level_ads: true
+         });
+        </script>
+
+        <link type="text/css" rel="stylesheet" href="/plugins/SyntaxHighlight3_new/syntaxhighlighter_3.0.83/styles/shCore.css" />
+        <link type="text/css" rel="stylesheet" href="/plugins/SyntaxHighlight3_new/syntaxhighlighter_3.0.83/styles/shThemeMidnight.css" />
+
+
+        <script type="text/javascript" src="/plugins/SyntaxHighlight3_new/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+        <script type="text/javascript" src="/plugins/SyntaxHighlight3_new/syntaxhighlighter_3.0.83/scripts/shBrushBash.js"></script>
+        <script type="text/javascript" src="/plugins/SyntaxHighlight3_new/syntaxhighlighter_3.0.83/scripts/shBrushCSharp.js"></script>
+        <script type="text/javascript" src="/plugins/SyntaxHighlight3_new/syntaxhighlighter_3.0.83/scripts/shBrushCpp.js"></script>
+        <script type="text/javascript" src="/plugins/SyntaxHighlight3_new/syntaxhighlighter_3.0.83/scripts/shBrushCss.js"></script>
+        <script type="text/javascript" src="/plugins/SyntaxHighlight3_new/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+        <script type="text/javascript" src="/plugins/SyntaxHighlight3_new/syntaxhighlighter_3.0.83/scripts/shBrushJava.js"></script>
+        <script type="text/javascript" src="/plugins/SyntaxHighlight3_new/syntaxhighlighter_3.0.83/scripts/shBrushJavaFX.js"></script>
+        <script type="text/javascript" src="/plugins/SyntaxHighlight3_new/syntaxhighlighter_3.0.83/scripts/shBrushPerl.js"></script>
+        <script type="text/javascript" src="/plugins/SyntaxHighlight3_new/syntaxhighlighter_3.0.83/scripts/shBrushPhp.js"></script>
+        <script type="text/javascript" src="/plugins/SyntaxHighlight3_new/syntaxhighlighter_3.0.83/scripts/shBrushPlain.js"></script>
+        <script type="text/javascript" src="/plugins/SyntaxHighlight3_new/syntaxhighlighter_3.0.83/scripts/shBrushPython.js"></script>
+        <script type="text/javascript" src="/plugins/SyntaxHighlight3_new/syntaxhighlighter_3.0.83/scripts/shBrushRuby.js"></script>
+        <script type="text/javascript" src="/plugins/SyntaxHighlight3_new/syntaxhighlighter_3.0.83/scripts/shBrushScala.js"></script>
+        <script type="text/javascript" src="/plugins/SyntaxHighlight3_new/syntaxhighlighter_3.0.83/scripts/shBrushSql.js"></script>
+        <script type="text/javascript" src="/plugins/SyntaxHighlight3_new/syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
+        <script type="text/javascript" src="/plugins/SyntaxHighlight3_new/syntaxhighlighter_3.0.83/scripts_extend/shBrushBat.js"></script>
+        <script type="text/javascript" src="/plugins/SyntaxHighlight3_new/syntaxhighlighter_3.0.83/scripts_extend/shBrushObjectiveC.js"></script>
+        <script type="text/javascript">
+        SyntaxHighlighter.defaults["toolbar"] = 1
+        SyntaxHighlighter.defaults["collapse"] = 0
+        SyntaxHighlighter.defaults["auto-links"] = 1
+        SyntaxHighlighter.defaults["gutter"] = 1
+        SyntaxHighlighter.defaults["smart-tabs"] = 1
+        SyntaxHighlighter.defaults["tab-size"] = 4
+        SyntaxHighlighter.all();
         </script>
 	</head>
 
@@ -241,6 +283,18 @@
 
 					<div class="article">
 						[##_article_rep_desc_##]
+
+                     <div style="margin-top:10px;">
+                        <!-- 블로그 -->
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-6562372416534335"
+                             data-ad-slot="8386842407"
+                             data-ad-format="auto"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                     </div>
 					</div>
 
 					<div class="actionTrail">
@@ -248,8 +302,14 @@
 						<s_rp_count>
 							<span class="cnt">[##_article_rep_rp_cnt_##]</span> Comments
 						</s_rp_count></a>
+                    <hr style="margin-bottom:10px;" />
+                    <script src="https://utteranc.es/client.js"
+                            repo="songmw90/blog-comments"
+                            branch="master"
+                            issue-term="[##_article_rep_link_##]"
+                            async>
+                    </script>
 					</div>
-
 					<s_rp>
 						<div class="comment">
                         <hr>
